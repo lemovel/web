@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap 101 Template</title>
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <style>
+    div {
+      border: 1px solid #000000;
+    }
+    .masked {
+      position: relative;
+    }
+    .masked .mask {
+      position: absolute;
+      left:0;
+      top:80%;
+      right:0;
+      bottom: 0;
+      background: rgba(0,0,0,.5);
+      color: #ffffff;
+      transition: top 2s;
+    }
+    .masked .mask:hover {
+      top:0;
+    }
+    #login {
+      width:500px;
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+<div class="navbar navbar-default ">
+  <div class="container">
+    <div class="navbar-header">
+      <div class="navbar-brand">
+        <img src="img/logo.png" >
+      </div>
+      <button class="navbar-toggle " data-toggle="collapse" type="button" data-target="#1">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse " id="1">
+      <div class="dropdown navbar-left  " >
+        <a data-toggle="dropdown" class="btn  navbar-btn  dropdown-toggle" href="#"> 菜单
+          <span class="caret"></span>
+        </a>
+      <ul class="dropdown-menu">
+        <li><a href="#">intel电脑</a></li>
+        <li><a href="#">intel</a></li>
+        <li><a href="#">intel芯片</a></li>
+        <li><a href="#">intel技术</a></li>
+      </ul>
+      </div>
+      <div class="dropdown navbar-right" >
+        <a class="navbar-link navbar-text dropdown-toggle" data-toggle="dropdown" href="#">登录
+        </a>
+        <div class="dropdown-menu" id="login">
+          <form action="" class=" navbar-form  ">
+            <h1>登录</h1>
+            <h5>你是否在英特尔工作？</h5>
+            <div class="form-group">
+              <div>
+                <label for="username" class="sr-only">username</label>
+                <input type="text" id="username"  placeholder="用户名">
+              </div>
+            </div>
+            <div class="clearfix " style="height:20px;"></div>
+            <div class="form-group">
+              <label for="upwd" class="sr-only">password</label>
+              <input type="text" id="upwd"  placeholder="密码">
+            </div>
+            <h5>你登录表明您同意我们的服务条款</h5>
+            <button class="btn btn-success" type="button">登录</button>
+            <div class="checkbox pull-right">
+              <label>
+                <input type="checkbox">
+                记住我
+              </label>
+            </div>
+          </form>
+        </div>
+      </div>
+      <a  class="navbar-link navbar-text navbar-right" href="#">
+        China(简体中文) <span class="glyphicon glyphicon-calendar"></span>
+      </a>
+      <form class="navbar-form navbar-right" action="">
+        <div class="form-group has-feedback">
+          <input type="text"  class="form-control navbar-right " placeholder="搜索">
+          <span class="glyphicon glyphicon-search form-control-feedback embed-responsive"></span>
+        </div>
+      </form>
+      <span class="navbar-text navbar-right">|</span>
+      <a class="navbar-link navbar-text navbar-right" href="#">查找内容</a>
+    </div>
+  </div>
+</div>
+<!--**************主体部分************************-->
+<div class="main">
+  <div class="container">
+    <h2>欢迎来到英特尔</h2>
+    <div class="row">
+      <div class="col-md-8 col-xs-12">
+        <img src="img/intel.web.864.486.1.jpg" class="img-responsive" alt="">
+      </div>
+      <div class="col-md-4 col-xs-12">
+        <div class="row">
+          <div class="col-md-12 col-xs-6">
+            <div class="masked">
+            <img src="img/intel.web.368.207.1.jpg" class="img-responsive" alt="">
+              <div class="mask">
+                <h5>解密2合1电脑</h5>
+                <p>搭载英特尔处理器的2合1电脑，助你搞笑工作的同时带给你灵活可触控的平板经验</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-xs-6 " >
+                  <img src="img/intel.web.81.108.png" class="img-responsive pull-left" alt="">
+                <span class="divider pull-left" ></span>
+                <ul class="list-unstyled pull-left" >
+                  <li>英特尔酷睿M处理器</li>
+                  <li>神奇的实感技术</li>
+                  <li>英特尔凌动处理器</li>
+                  <li>2015台北国际电脑展</li>
+                  <li>风暴英雄你吗吗</li>
+                </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-md-push-4 col-xs-12"><img src="img/intel.web.864.486.2.jpg" class="img-responsive" alt=""></div>
+      <div class="col-md-4 col-md-pull-8 col-xs-12">
+        <div class="row">
+          <div class="col-md-12 col-xs-6">
+            <ul class="list-unstyled">
+              <li>升级办公利器,</li>
+              <li>数据中心,</li>
+              <li>大数据时代,</li>
+              <li>云计算和云服务,</li>
+              <li>IT极限挑战</li>
+            </ul>
+          </div>
+          <div class="col-md-12 col-xs-6"><img src="img/intel.web.368.207.2.jpg" class="img-responsive" alt=""></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-xs-12"><img src="img/intel.web.864.486.3.jpg" class="img-responsive" alt=""></div>
+      <div class="col-md-4 col-xs-12">
+        <div class="row">
+          <div class="col-md-12 col-xs-6">
+            <ul class="list-unstyled">
+              <li>升级办公利器,</li>
+              <li>数据中心,</li>
+              <li>大数据时代,</li>
+              <li>云计算和云服务,</li>
+              <li>IT极限挑战</li>
+            </ul>
+          </div>
+          <div class="col-md-12 col-xs-6"><img src="img/intel.web.368.207.3.jpg" class="img-responsive" alt=""></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--页脚部分-->
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="row">
+          <div class="col-sm-6"><ul class="list-unstyled">
+            <li>关于英特尔</li>
+            <li>投资者关系</li>
+            <li>联系我们</li>
+            <li>新闻发布室</li>
+            <li>网站地图</li>
+            <li>工作</li>
+            <li>公司信息</li>
+          </ul></div>
+          <div class="col-sm-6"><ul class="list-unstyled">
+            <li>支持</li>
+            <li>支持主页</li>
+            <li>下载中心</li>
+            <li>产品规范</li>
+            <li>技术支持</li>
+          </ul></div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="row">
+          <div class="col-sm-6"><ul class="list-unstyled">
+            <li>法律声明</li>
+            <li>使用条款</li>
+            <li>商标</li>
+            <li>隐私条款</li>
+            <li>Cookies</li>
+          </ul></div>
+          <div class="col-sm-6"> <ul class="list-unstyled">
+            <li>法律声明</li>
+            <li>使用条款</li>
+            <li>商标</li>
+            <li>隐私条款</li>
+            <li>Cookies</li>
+          </ul></div>
+        </div>
+      </div>
+    </div>
+   </div>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.js"></script>
+<script>
+  (function () {
+    var s = document.createElement("script");
+    s.onload = function () {
+      bootlint.showLintReportForCurrentDocument([]);
+    };
+    s.src = "js/bootlint.js";
+    document.body.appendChild(s)
+  })();
+  </script>
+</body>
+</html>

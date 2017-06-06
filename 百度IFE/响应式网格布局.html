@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>响应式网格布局</title>
+</head>
+<style type="text/css">
+  div {
+    border:1px solid #999;
+    background-color:#eee;
+    margin: 20px 0 0 20px;
+    height: 50px;
+  }
+  .left {
+    float:left;
+  }
+  .container {
+   width: 100%;
+    height: 100%;
+  }
+  @media screen and (min-width: 768px) {
+    .lg1,
+    .lg2,
+    .lg3 {
+      width:32%;
+    }
+    .lg4
+    {
+      width:24%;
+    }
+    .lg5 {
+      width:48%;
+    }
+    .lg6 {
+      width:24%;
+    }
+    .lg7,
+    .lg8 {
+      width: 8%;
+    }
+    .lg9,
+    .lg10 {
+      width:16%;
+    }
+    .lg11 {
+      width:45%;
+    }
+  }
+</style>
+<body>
+<div class="container">
+  <div class="lg1 left"></div>
+  <div class="lg2 left"></div>
+  <div class="lg3 left"></div>
+  <div class="lg4 left"></div>
+  <div class="lg5 left"></div>
+  <div class="lg6 left"></div>
+  <div class="lg7 left"></div>
+  <div class="lg8 left"></div>
+  <div class="lg9 left"></div>
+  <div class="lg10 left"></div>
+  <div class="lg11 left"></div>
+</div>
+</body>
+</html>

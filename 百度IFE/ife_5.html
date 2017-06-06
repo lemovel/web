@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>练习5</title>
+  <style type="text/css">
+    * {padding: 0;margin: 0}
+    .float_r {
+      float: right;
+    }
+    .float_l {
+      float:left;
+    }
+    .news {
+      width: 980px;
+      height:1386px;
+      border-bottom: 892px ;
+      background-color: #fff;
+      margin: auto;
+    }
+    .header,.content,footer {
+      margin-left:44px;
+    }
+    .header {
+      width:892px;
+      height:63px;
+      border-bottom:2px solid #938e8c;
+
+    }
+    body {
+      background-color: #000;
+    }
+    .label {
+      width:110px;
+      height: 61px;
+      float: left;
+      background-color:#d45d5c;
+      text-align: center;
+      margin-top:2px;
+    }
+    .label span {
+      font-size: 12px;
+      color: #fff;
+      font-family: 黑体;
+      line-height:100px;
+    }
+    .date {
+      float: right;
+      font-size: 12px;
+      color: #d45d5c;
+      line-height: 102px;
+
+    }
+    .section {
+      width:892px;
+      height:301px;
+      margin-top: 30px;
+    }
+    .right {
+      width:641px;
+      height: 301px;
+      background-image:url(img/1.jpg);
+      overflow: hidden;
+      float: left;
+    }
+    .right_r {
+       width:191px;
+       height:301px;
+       background-color:green;
+       opacity: 0.2;
+      float: left;
+     }
+    .right_l {
+      width:191px;
+      height:301px;
+      background-color:red;
+      opacity: 0.2;
+      float: right;
+    }
+    .left {
+      border-top:2px solid #cc8091;
+      width: 203px;
+      height:301px;
+      float: right;
+    }
+    .left .p1 {
+      font-size: 24px;
+      color: #000;
+      font-family: 微软雅黑;
+      padding: 2px;
+      text-decoration:underline;
+      font-variant:small-caps;
+    }
+    .left .p2 {
+      font-size:12px;
+      color:#676767;
+      font-family:楷体;
+    }
+    .left .p3 {
+      font-size: 116px;
+      color: #75b86b;
+      font-family: 微软雅黑;
+      font-style: oblique;
+      margin-left: -20px;
+    }
+    .left .p4 {
+      margin-top: -25px;
+      font-size: 55px;
+      color: #cc8091;
+      font-family: 微软雅黑;
+    }
+    .left .p5 {
+      font-size: 21px;
+      color: #cc8091;
+      font-family: 微软雅黑;
+    }
+    .left .p6 {
+      font-size: 12px;
+      color: #cc8091;
+      font-family: 微软雅黑;
+      overflow: hidden;
+      margin:-10px 0 0 0;
+    }
+    .section1 {
+      margin-top: 20px;
+    }
+    .text {
+      width:200px;
+      margin-right: 15px;
+    }
+    .text1 {
+      width: 200px;
+      margin-right: 15px;
+    }
+    .text2 {
+      width: 200px;
+    }
+    .text .text_title {
+      font-size: 16px;
+      color: #418c59;
+      font-weight: bold;
+      text-transform: capitalize;
+      text-decoration:underline;
+      font-family: 微软雅黑;
+    }
+    .text .text_wenzi {
+      font-size: 12px;
+      margin-top: 10px;
+      color: #767777;
+      padding:0 10px 12px 0;
+      font-family: 宋体;
+      line-height: 20px;
+    }
+    .text1 .text1_title {
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: underline;
+      text-transform: capitalize;
+      color: #d2994f;
+    }
+    .text1 .text1_wenzi {
+      font-size: 12px;
+      margin-top: 10px;
+      color:#231815;
+      font-family: 微软雅黑;
+      padding: 0 10px 16px 0;
+      opacity: 0.7;
+    }
+    .text2 .text2_title {
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: underline;
+      text-transform: capitalize;
+      color: #cc7680;
+    }
+    .text2 .text2_wenzi {
+      margin-top: 10px;
+    }
+    .text2 .text2_title li i{
+      font-size: 12px;
+      color:#cd4a48;
+      padding: 8px 0;
+      opacity: 0.7;
+    }
+    ul{
+      list-style: none;
+      margin-top: 10px;
+    }
+    .left1 .title {
+      width:415px;
+      border-bottom: 2px solid #11456b;
+      margin-top: 30px;
+    }
+    .left1 .title .p7 {
+      font-size: 72px;
+      color:#f5e327;
+      font-style: oblique;
+      font-family: 黑体;
+      font-weight: bold;
+    }
+    .left1 .title .p8 {
+      font-size: 42px;
+      color:#11456b;
+      padding: 0 16px;
+      font-family: 黑体;
+      font-weight: bold;
+    }
+    .left1 .title .p9 {
+      font-size: 33px;
+      color: #11456b;
+      font-family: 黑体;
+      font-weight: bold;
+    }
+    .left1 .wenzi {
+      width:415px;
+    }
+    .wenzi .first {
+      font-size: 70px;
+      color: #f5e327;
+      font-family: 微软雅黑;
+    }
+    .wenzi .second {
+      font-size: 12px;
+      color: #767777;
+      font-family:宋体;
+      text-align: justify;
+      line-height: 22px;
+    }
+    .wenzi .second .third img {
+      float: right;
+      margin-left: 20px;
+      margin-top: 20px;
+    }
+    .section2 {
+      height:750px;
+    }
+    .right1 .right1_img {
+      width:458px;
+      height:275px;
+      background-image: url(img/1.jpg);
+      margin-left:20px;
+      margin-top: 30px;
+      position: relative;
+    }
+    .right1_shadow {
+      width:458px;
+      height: 61px;
+      background-color: #231815;
+      position: absolute;
+      bottom:0;
+      opacity: 0.8;
+    }
+    .right1_g {
+      border-left: 3px solid #72b16a;
+      height: 44px;
+      margin-left: 26px;
+      margin-top: 9px;
+    }
+    .right1_g span {
+      font-size: 26px;
+      color:#fff;
+      text-align: center;
+      font-family: 微软雅黑;
+      margin-left: 10px;
+    }
+    .right1_g i {
+      font-size: 12px;
+      color:#72b16a;
+      font-family: 微软雅黑;
+      line-height: 140%;
+    }
+    .right1_text {
+      width:459px;
+      height:318px;
+    }
+    .right1_text1 {
+      margin-top: 30px;
+    }
+    .right1_text1 ul {
+      list-style: none;
+      margin-left: 20px;
+
+    }
+
+    .right1_text1 span {
+      font-size: 10px;
+      text-align: left;
+      font-family: 宋体;
+      color: #5a5b5b;
+      line-height: 20px;
+    }
+    .right1_text1 i {
+      font-size: 12px;
+      text-align: right;
+      font-family: 宋体;
+      color: #5a5b5b;
+      line-height: 20px;
+    }
+    .label1 {
+      width: 260px;
+      height: 160px;
+      background-color:#d45d5c;
+      margin-left: 20px;
+    }
+    .num {
+      font-size: 110px;
+      color: #fff;
+      font-family: 微软雅黑;
+    }
+    .label1 .shuxian {
+      border-left: 4px solid #fff;
+      height: 86px;
+      width:160px;
+      margin-top: 30px;
+    }
+    .sb {
+      margin-left: 10px;
+    }
+    .sb .p10 {
+      font-size: 21px;
+      color: #fff;
+      font-family: 黑体;
+      line-height: 24px;
+    }
+    .sb .p11 {
+      font-size: 12px;
+      color: #fff;
+      font-family: 黑体;
+    }
+    .right1_text2 {
+      margin-top: 50px;
+    }
+    .right1_text3 {
+      width:150px;
+      height:160px;
+      border: 1px solid #000000;
+
+    }
+    .right1_text3 span {
+      font: normal 72px/16px "黑体";
+      color: #d45d5c;
+    }
+    .right1_text3 .c {
+      font: italic 14px/16px 黑体;
+      color: #5a5b5b;
+      padding-top: 10px;
+      word-break: break-all;
+    }
+    .right1_text3 .a {
+      margin-top: 12px;
+      margin-left: -38px;
+    }
+    .right1_text3 .b {
+      margin-top: 25px;
+      margin-right: -40px;
+    }
+  </style>
+</head>
+<body>
+<div class="news">
+  <div class="header">
+    <div class="label"><span>ife.baidu.com</span></div>
+    <div class="date">2016.03</div>
+  </div>
+  <div class="content">
+    <div class="section">
+      <div class="right">
+        <div class="right_r"></div>
+        <div class="right_l"></div>
+      </div>
+      <div class="left">
+        <p class="p1">About</p>
+        <p class="p1">Technology</p>
+        <p class="p2">about telhlh sldh hl </p>
+        <p class="p2">about ad ad </p>
+        <p class="p3">700</p>
+        <div class="p4 float_l">3.2</div>
+        <div class="float_l">
+          <p class="p5 ">css</p>
+          <p class="p6 ">cscscscscscscs</p>
+        </div>
+
+      </div>
+    </div>
+    <div class="section1">
+      <div class="text float_l">
+        <p class="text_title">what</p>
+        <p class="text_wenzi">我啊成熟度和后个人或歌会二胡换个肉火锅偶尔会偶尔后个人或偶尔会欧冠黑和肉火锅偶俄日韩国偶尔红鹅肉割肉和肉火锅偶尔回归偶尔</p>
+      </div>
+      <div class="text1 float_l">
+      <p class="text1_title">when</p>
+      <p class="text1_wenzi">呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜</p>
+      </div>
+      <div class="text2 float_l">
+        <p class="text2_title">when</p>
+        <p class="text2_wenzi">呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜</p>
+        <ul>
+          <li><i>what------40%</i></li>
+          <li><i>what------40%</i></li>
+          <li><i>what------40%</i></li>
+        </ul>
+      </div>
+    </div>
+    <div class="section2">
+      <div class="left1 float_l">
+        <div class="title">
+          <p class="p7">THE<span class="p8">TECHNOLOGE OF FRONT</span></p>
+          <p class="p9">前端技术领域</p>
+        </div>
+        <div class="wenzi">
+          <div class="first float_l">前</div>
+          <div class="second ">
+            <div class="third "><img src="img/2.png" alt=""></div>
+            端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate dolor ducimus ea eos explicabo fugiat fugit magnam, nam neque pariatur quas, quisquam quos reprehenderit, sequi soluta tenetur unde. Aliquid, ducimus!</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate dolor ducimus ea eos explicabo fugiat fugit magnam, nam neque pariatur quas, quisquam quos reprehenderit, sequi soluta tenetur unde. Aliquid, ducimus!</p>
+          </div>
+
+        </div>
+      </div>
+      <div class="right1 float_l">
+        <div class="right1_img">
+          <div class="right1_shadow">
+            <div class="right1_g">
+              <span>前端技术</span>
+              <i>前端技术前端技术</i>
+            </div>
+          </div>
+        </div>
+        <div class="right1_text">
+          <div class="right1_text1">
+            <ul>
+              <li><span class="san"></span>前端qiqiqiasai前ddgggddddd端...........................................<i>前端</i></li>
+              <li><span class="san"></span>前端qiqiqiasai前ddddddd端前端前.......................................<i>前端</i></li>
+              <li><span class="san"></span>前端qiqiqiasdi前ddddddd端啊啊啊.......................................<i>前端</i></li>
+            </ul>
+          </div>
+          <div class="right1_text2">
+            <div class="label1 float_l">
+              <div class="num float_l">0</div>
+              <div class="shuxian float_l">
+                <div class="sb">
+                  <i class="p10">ONE TWO</i>
+                  <i class="p10">THREE FORE FIVE</i>
+                  <P class="p11">hello</P>
+                  <P class="p11">hello</P>
+                </div>
+              </div>
+            </div>
+            <div class="right1_text3 float_l">
+              <div class="c">
+                <span class="a float_l">“</span>
+                assumenda commodi dignissir asda ad asdadsada sd adasdadada ad as da quoe voluptas.
+                <span class="b float_r">” </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer"></div>
+</div>
+
+</body>
+</html>

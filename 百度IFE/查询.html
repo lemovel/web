@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>查询</title>
+  <style>
+    li {
+      background-color: red;
+      color: #fff;
+      height: 50px;
+      display: inline-block;
+      text-align: center;
+      margin-right: 5px;
+      cursor: pointer;
+    }
+    span {
+      color: #000000;
+    }
+  </style>
+
+</head>
+<body>
+<textarea  id="in" cols="30" rows="10"></textarea>
+<button onclick="insert()">插入</button>
+<button onclick="search()">查询</button>
+<input  id="num" type="text">
+<ul id="content"></ul>
+</body>
+<script>
+  var ul = document.getElementById("content");
+  function insert (){
+    var area= document.getElementById("in");
+    var array = area.value;
+      var arr=array.split(/[,\s+.\r]/);
+    console.log(arr);
+    for (var i=0;i<arr.length;i++) {
+      var li = document.createElement("li");
+      li.innerHTML = arr[i];
+      ul.appendChild(li);
+    }
+  }
+  function search (){
+    var num=document.getElementById("num");
+    var text=num.value;
+    console.log(text);
+    var li= ul.getElementsByTagName("li");
+    for (var i=0;i<li.length;i++) {
+        li[i].innerHTML=li[i].innerHTML.replace(text,'<span>'+text+'</span>');
+      console.log(li[i]);
+
+    }
+  }
+</script>
+</html>

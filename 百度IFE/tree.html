@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>二叉树的遍历</title>
+  <style>
+    #first {
+      width: 500px;
+      height: 500px;
+      border: 1px solid red;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      background-color: #ffffff;
+    }
+    #second {
+      width: 200px;
+      height: 200px;
+      border: 1px solid red;
+      float: left;
+      margin-left: 20px;
+      background-color: #ffffff;
+    }
+    #third {
+        width: 50px;
+        height: 50px;
+        border: 1px solid red;
+        float: left;
+      background-color: #ffffff;
+      }
+  </style>
+</head>
+<body>
+<div id="first">
+  <div id="second">
+    <div id="third"></div>
+    <div id="third"></div>
+  </div>
+ <div id="second">
+    <div id="third"></div>
+    <div id="third"></div>
+  </div>
+</div>
+<button onclick="one()">先序</button>
+<button onclick="two()">中序</button>
+<button onclick="three()">后序</button>
+</body>
+<script>
+  var time=0;
+  var first= document.getElementById("first");
+  function color(sb) {
+    var num1 = setTimeout(function() {
+      sb.style.backgroundColor="red";
+    },time+=500);
+    setTimeout(function() {
+      sb.style.backgroundColor="#fff";
+    },time+=500);
+    //console.log(time);
+
+  }
+ // function one () {color(first);}
+  function one () {
+    function xianxu (node) {
+      if(node!=null) {
+        color(node);
+        xianxu(node.firstElementChild);
+        xianxu(node.lastElementChild);
+      }
+    }
+    xianxu(first);
+    time=0;//将定时器的时间改为0
+  }
+  function two () {
+    function zhongxu (node) {
+      if(node!=null) {
+        zhongxu(node.firstElementChild);
+        color(node);
+        zhongxu(node.lastElementChild);
+      }
+    }
+    zhongxu(first);
+    time=0;//将定时器的时间改为0
+  }
+  function three () {
+    function houxu (node) {
+      if(node!=null) {
+        houxu(node.firstElementChild);
+        houxu(node.lastElementChild);
+        color(node);
+      }
+    }
+    houxu(first);
+    time=0;//将定时器的时间改为0
+  }
+</script>
+</html>

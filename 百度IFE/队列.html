@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>模拟队列</title>
+  <style>
+    li {
+      background-color: red;
+      color: #fff;
+      width:10px;
+      height: 50px;
+      display: inline-block;
+      text-align: center;
+      margin-right: 5px;
+      cursor: pointer;
+    }
+    #num {
+      width: 500px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <input type="text" id="sb" value="">
+    <button onclick="leftIn()">左侧入</button>
+    <button onclick="rightIn()">右侧入</button>
+    <button onclick="leftOut()">左侧出</button>
+    <button onclick="rightOut()">右测出</button>
+    <ul id="num"></ul>
+    <button onclick="sort()">排序</button>
+  </div>
+</body>
+<script>
+  var arr=[];
+  var ul = document.getElementById("num");
+  function sort () {
+    for(i=0;i<arr.length-1;i++) {
+      for (j=0;j<arr.length-1-i;j++) {
+        if (arr[j]>arr[j+1]){
+          var temp=arr[j];
+          arr[j] = arr [j+1];
+          arr[j+1] = temp;
+        }
+      }
+    }
+    if(ul.innerHTML!=""){
+      ul.innerHTML="";
+    }
+    for (var i=0;i<arr.length;i++) {
+      var li = document.createElement("li");
+      li.style.height = arr[i]+"px";
+      ul.appendChild(li);
+      //console.log(ul.innerHTML);
+
+    }
+  }
+  function leftIn (){
+    var sb = document.getElementById("sb");
+    if (sb.value=="") {
+      alert("会不会写字");
+    }
+    if (sb.value<10 || sb.value>100) {
+      alert("笨蛋,数字要在10到100中间");
+    }
+    if (sb.value>=10 && sb.value<=100) {
+    var a=sb.value;
+    console.log(a);
+    arr.unshift(a);
+      if(ul.innerHTML!=""){
+        ul.innerHTML="";
+      }
+    for (var i=0;i<arr.length;i++) {
+        var li = document.createElement("li");
+       li.style.height = arr[i]+"px";
+        ul.appendChild(li);
+        //console.log(ul.innerHTML);
+
+      }
+    }
+  }
+  function rightIn (){
+    var sb = document.getElementById("sb");
+    if (sb.value=="") {
+      alert("会不会写字");
+    }
+    if (sb.value<10 && sb.value>100) {
+      alert("笨蛋，数字要在10到100中间");
+    }
+    else {
+      var a=sb.value;
+      console.log(a);
+      arr.push(a);
+      if(ul.innerHTML!=""){
+        ul.innerHTML="";
+      }
+      for (var i=0;i<arr.length;i++) {
+        var li = document.createElement("li");
+        li.style.height = arr[i]+"px";
+        ul.appendChild(li);
+        //console.log(ul.innerHTML);
+
+      }
+    }
+  }
+  function leftOut (){
+    var sb = document.getElementById("sb");
+      arr.shift();
+      if(ul.innerHTML!=""){
+        ul.innerHTML="";
+      }
+      for (var i=0;i<arr.length;i++) {
+        var li = document.createElement("li");
+        li.style.height = arr[i]+"px";
+        ul.appendChild(li);
+        //console.log(ul.innerHTML);
+
+      }
+  }
+  function rightOut (){
+    var sb = document.getElementById("sb");
+      arr.pop();
+      if(ul.innerHTML!=""){
+        ul.innerHTML="";
+      }
+      for (var i=0;i<arr.length;i++) {
+        var li = document.createElement("li");
+        li.style.height = arr[i]+"px";
+        ul.appendChild(li);
+        //console.log(ul.innerHTML);
+
+      }
+  }
+num.addEventListener('click',function(e){
+  num.removeChild(e.target);
+})
+</script>
+<!--<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>js_4</title>
+	<style>
+	.node {
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		color: #fff;
+		background: rgba(0, 0, 0, .4);
+		margin: 10px;
+		overflow: hidden;
+	}
+	</style>
+</head>
+<body>
+<div id="btn">
+	<input type="text" class="text">
+	<input type="button" class="left-in" value="左侧入">
+	<input type="button" class="right-in" value="右侧入">
+	<input type="button" class="left-out" value="左侧出">
+	<input type="button" class="right-out" value="右侧出">
+</div>
+<div id="box"></div>
+<script>
+	var ipt = document.querySelector('.text'),
+		box = document.getElementById('box'),
+		LI = document.querySelector('.left-in'),
+		RI = document.querySelector('.right-in'),
+		LO = document.querySelector('.left-out'),
+		RO = document.querySelector('.right-out');
+	LI.onclick = function() {
+		var node = createNode();
+		if(!/\S/.test(node.innerText)) return;
+		box.insertBefore(node, box.firstChild);
+	};
+	RI.onclick = function() {
+		var node = createNode();
+		if(!/\S/.test(node.innerText)) return;
+		box.appendChild(node);
+	};
+	LO.onclick = function() {
+		if(box.children.length < 1) return;
+		box.removeChild(box.firstElementChild);
+	};
+	RO.onclick = function() {
+		if(box.children.length < 1) return;
+		box.removeChild(box.lastElementChild);
+	};
+	box.addEventListener('click', function(e) {
+		box.removeChild(e.target);
+	});
+	function createNode() {
+		var text = ipt.value;
+		var node = document.createElement('div');
+		node.setAttribute('class', 'node');
+		node.innerText = text;
+		ipt.value = '';
+		return node;
+	}-->
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>多叉树</title>
+</head>
+<style>
+  div {
+    border:2px solid black;
+    display: flex;
+    padding: 10px 5px;
+    margin: 5px;
+    background-color: white;
+    flex-wrap: wrap;
+  }
+
+</style>
+</head>
+<body >
+<div id="first">
+  <div >
+    <div>aaa</div>
+    <div>bbb</div>
+    <div>ccc</div>
+    <div>ddd</div>
+    <div>eee</div>
+  </div>
+  <div >
+    <div>fff</div>
+    <div>ggg</div>
+  </div>
+</div>
+<button onclick="one()">先序</button>
+<button onclick="two()">后序</button>
+<input type="text" id="name">
+<button onclick="god()">先序查询</button>
+  <button onclick="add()">添加</button>
+  <input type="text" id="txt">
+  <button onclick="del()">删除</button>
+
+
+</body>
+<script>
+  //var name=document.getElementById("name");//这里输出的是undefined
+  var time=0;
+  var first= document.getElementById("first");
+  function color(sb) {
+    var num1 = setTimeout(function() {
+      sb.style.backgroundColor="red";
+    },time+=500);
+    setTimeout(function() {
+      sb.style.backgroundColor="#fff";
+    },time+=500);
+    var name=document.getElementById("name");//必须将NAME设置在这，设置在函数外输出的是undefine
+    console.log(name.value);
+    if (sb.firstChild && name.value!='' &&sb.firstChild.nodeValue.indexOf(name.value)!=-1)
+    {
+      //console.log(sb.innerHTML);
+     // console.log(name.value);
+      setInterval(function () {
+        sb.style.backgroundColor="green";
+      },time+=500);
+
+    }
+  }
+   //为元素绑定点击事件，点击后变色
+  // function one () {color(first);}
+  function one () {
+    function xianxu (node) {
+      if(node!=null) {
+        color(node);
+        xianxu(node.firstElementChild);
+        if(node.id!="first"){
+          xianxu(node.nextElementSibling);
+        }}
+    }
+    xianxu(first);
+    time=0;//将定时器的时间改为0
+  }
+  function two () {
+    function zhongxu (node) {
+      if(node!=null) {
+        zhongxu(node.firstElementChild);
+        color(node);
+        if(node.id!="first"){
+          zhongxu(node.nextElementSibling);
+        }}
+    }
+    zhongxu(first);
+    time=0;//将定时器的时间改为0
+  }
+  function god(){
+    function xianxu(node) {
+      if (node!=null) {
+        color(node);
+        //console.log(name.value);
+        //console.log(node.innerHTML.search(name.value));
+        xianxu(node.firstElementChild);
+        if(node.id!="first") {
+          xianxu(node.nextElementSibling);
+        }
+
+      }
+    }
+
+    xianxu(first);
+    time=0;
+  }
+  var divs =document.getElementsByTagName("div");
+  //console.log(divs);
+  for (var i=0;i<divs.length;i++) {
+      divs[i].onclick= function (e) {
+        if(!e) {
+          var e = window.event;
+        }
+        for (i=0;i<divs.length;i++) {//只能选中一个元素
+          if (divs[i].style.backgroundColor=="yellow"){
+            divs[i].style.backgroundColor="white";
+            divs[i].removeAttribute("class");
+          }
+        }
+       // clearClass("aoa");s
+        e.stopPropagation();
+        var ele  = e.target;
+        ele.style.backgroundColor="yellow";
+        ele.setAttribute("class","aoa");
+      }
+  }
+    function add () {//添加按钮点击onclick=""
+      alert("ri");
+      var txt = document.getElementById("txt");
+      var aoa = document.getElementsByClassName("aoa")[0];//注意getElements...(有elements是数组，需要加【i】)
+      console.log(aoa);
+      var div = document.createElement("div");
+      div.innerHTML=txt.value;
+      aoa.appendChild(div);
+    }
+  function del () {//删除按钮点击事件
+    var aoa = document.getElementsByClassName("aoa")[0];
+    aoa.parentNode.removeChild(aoa);
+  }
+</script>
+</html>
