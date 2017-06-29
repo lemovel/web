@@ -1,0 +1,19 @@
+<!--订单详情页面-->
+<div class="myorder">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>编号</th>
+      <th>菜品</th>
+      <th>下单时间</th>
+      <th>联系人</th>
+    </tr>
+    <tr ng-repeat="n in orderList">
+      <td>{{n.oid}}</td>
+      <td>{{n.img_sm}}</td>
+      <td>{{n.order_time}}</td>
+      <td>{{n.user_name}}</td>
+    </tr>
+    </thead>
+  </table>
+</div>

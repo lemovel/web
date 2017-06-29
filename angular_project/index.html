@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <title></title>
+  <style>
+    * {magin:0;padding: 0}
+    .contentPic {
+      width: 100px;
+      height: 100px;
+    }
+    .loading {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+    }
+    body {
+      width:471px;
+      height:738px;
+      position: relative;
+      overflow-x: hidden;/*取消水平滚动条*/
+    }
+    .page {
+      transition: all .2s linear;
+      position:absolute;   /*绝对定位后可以使用left属性*/
+      width: 100%;  /*宽度固定为父元素的100%*/
+      margin-bottom: 50px;
+
+    }
+    /*要离开的元素动画开始时的样式*/
+    .page.ng-leave {
+      left: 0;
+      opacity: 1;
+    }
+    /*要离开的元素动画结束时的样式*/
+    .page.ng-leave.ng-leave-active {
+      left: -100%;
+      opacity: 0;
+    }
+    /*要进入的元素动画开始时的样式*/
+    .page.ng-enter {
+      left: 100%;
+      opacity: 0;
+    }
+    /*要进入的元素动画结束时的样式*/
+    .page.ng-enter.ng-enter-active {
+      left: 0;
+      opacity: 1;
+    }
+
+  </style>
+</head>
+<body>
+<a href="#/main">main</a>
+<div class="page" ng-view></div>
+
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/angular.js"></script>
+<script src="js/angular-route.js"></script>
+<script src="js/angular-animate.js"></script>
+<script src="js/my.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/bootlint.js">
+</script>
+</body>
+</html>

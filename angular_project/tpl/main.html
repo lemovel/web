@@ -1,0 +1,29 @@
+<!--食品信息页面-->
+<div>
+  <div class="header" ng-include="'tpl/header.html'"></div>
+  <div class="content"style="margin-top: auto">
+    <div class="form-group has-feedback">
+      <label class="control-label sr-only" for="seek" >搜索</label>
+      <input ng-model="kw" type="text" id="seek" class="form-control" placeholder="请输入搜索内容">
+      <span class="glyphicon glyphicon-search form-control-feedback"></span>
+    </div>
+    <div ng-repeat="m in dishList" class="media">
+      <div class="media-left">
+        <a href="#/detail/{{m.did}}">
+          <img class="media-object contentPic"  ng-src="img/{{m.img_sm}}" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">{{m.name}}</h4>
+        <p>{{m.price}}</p>
+        <p>{{m.material}}</p>
+      </div>
+    </div>
+    <button  ng-click="loadMore()" ng-if="hasMore" ng-disabled="isLoading" class="btn btn-primary btn-block">
+    <span ng-hide="isLoading">加载更多</span>
+      <img src="img/loading.gif" class="loading" ng-show="isLoading" alt="" >
+    </button>
+    <div  ng-hide="hasMore" class="alert alert-danger">已经没有更多了</div>
+  </div>
+  <div class="footer" ng-include="'tpl/footer.html'"></div>
+</div>

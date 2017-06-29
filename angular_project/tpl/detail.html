@@ -1,0 +1,25 @@
+<!--单个食品详细信息-->
+<div class="container-fluid">
+  <div class="header" ng-include="'tpl/hearder.html'"></div>
+  <div class="content">
+    <div class="bg-primary"><!--navbar-text-->
+      <a href="#/main.html" class="text-success">首页</a>/
+      <a href="#">详情</a>
+    </div>
+    <div>
+      <h3>【{{dish.name}}】</h3>
+      <hr>
+      <img ng-src="{{dish.lg_img}}" class="img-responsive" alt="">
+      <div class="bg-primary">
+        <p><mark>主要原料：</mark>{{dish.material}}</p>
+        <br>
+        <p class="text-justify">{{dish.detail}}</p>
+        <br>
+        <p class="text-danger">￥{{dish.price}}</p>
+      </div>
+    </div>
+    <a href="#/order.html/{{dish.did}}" class="btn btn-success">我要订餐</a>
+    <a href="#/main.html" class="btn btn-danger">我再看看</a>
+  </div>
+  <div class="footer" ng-include="'tpl/footer.html'"></div>
+</div>

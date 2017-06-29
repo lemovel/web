@@ -1,0 +1,28 @@
+<!--配送信息页面-->
+<div>
+  <form ng-hide="isLoading">
+    <div class="form-group">
+      <label for="name">联系人：</label>
+      <input ng-model="order.user_name" type="text" class="form-control" id="name">
+    </div>
+    <div class="form-group">
+      <label for="xingbie">性别：</label>
+        <label class="radio-inline" id="xingbie">
+          <input ng-model="order.sex" type="radio" name="sex" value="1">先生
+          <input ng-model="order.sex" type="radio" name="sex" value="2">女士
+        </label>
+      </div>
+    <div class="form-group">
+      <label for="phone1">联系电话：</label>
+      <input ng-model="phone" type="text" class="form-control" id="phone1">
+    </div>
+    <div class="form-group">
+      <label for="addr1">送餐地址：</label>
+      <textarea  ng-model="addr" id="addr1" class="form-control" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+      <button ng-click="submitOrder()" class="form-control btn btn-success">确定下单</button>
+    </div>
+  </form>
+  <div ng-show="isLoading" class="alert alert-success">订餐成功，您的订单编号为：{{fk.oid}}。您可以在用户中心查看订单状态</div>
+</div>

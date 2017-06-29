@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>实现一个分页</title>
+ </head>
+ <body>
+ <div id="a"></div>	
+  <script>
+	/****************实现一个分页功能*************************************/
+	function	showPage(page,total){//page 指定当前页面,total指定总页面
+		var str=' '+'<a href="#">'+page+'<a>'+' ';
+		for (var i=1;i<=3 ;i++ )
+		{
+			if (page-i>1)
+			{
+				str=' '+'<a href="#">'+(page-i)+'</a>'+str;
+			}
+			if (page+i<total)
+			{
+				str+='<a href="#">'+(page+i)+'</a>'+' ';
+			}
+			
+		}
+		if (page+4>=total)
+			{
+				str+='<a href="#">'+total+'</a>'+'下一页';
+			}
+			if (page+4<total)
+			{
+				str+='...'+'<a href="#">'+total+'</a>'+'下一页';
+			}
+			if (page-4<=1)
+			{
+				str='上一页'+'<a href="#">'+'1'+'</a>'+str;
+
+			}
+			if (page-4>1)
+			{
+				str='上一页'+'<a href="#">'+'1'+'</a>'+'...'+str;
+			}
+			return str;
+	}
+	window.onload=function()
+	{
+		var i=showPage(5,20);
+		var sb=document.getElementById("a");
+		sb.innerHTML=i;
+	}
+  </script>
+ </body>
+</html>
