@@ -87,5 +87,7 @@ run(function($http){
     when('/order/:did',{
       templateUrl:'tpl/order.html',
       controller:'order.html'
-    })
+    }).otherwise({
+		redirectTo:'/main'
+	})
 });
